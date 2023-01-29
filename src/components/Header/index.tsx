@@ -7,8 +7,10 @@ import checkout from '../../assets/svg/checkout.svg'
 export function Header() {
   return (
     <HeaderContainer>
-      <div className="content">
-        <img src={logo} alt="" />
+      <div>
+        <NavLink to={'/'}>
+          <img src={logo} alt="" />
+        </NavLink>
         <nav>
           <span>
             <img src={local} alt="Localização" />

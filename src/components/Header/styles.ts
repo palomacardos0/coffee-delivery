@@ -7,11 +7,12 @@ export const HeaderContainer = styled.header`
   @media (max-width: 764px) {
     padding: 1rem;
   }
-  .content {
+  div {
     justify-content: space-between;
     display: flex;
     width: 100%;
     max-width: 1120px;
+    margin: 0 auto;
   }
 
   nav {
@@ -24,7 +25,7 @@ export const HeaderContainer = styled.header`
       display: flex;
       align-items: center;
       justify-content: center;
-      max-width: 143px;
+      max-width: 148px;
       gap: 0.5rem;
       padding: 0.6rem;
       background: ${props => props.theme['purple-light']};
