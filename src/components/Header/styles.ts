@@ -28,7 +28,7 @@ export const HeaderContainer = styled.header`
       display: flex;
       align-items: center;
       justify-content: center;
-      max-width: 148px;
+      max-width: 158px;
       gap: 0.5rem;
       padding: 0.6rem;
       background: ${props => props.theme['purple-light']};

@@ -1,5 +1,5 @@
 import { BannerContainer, ItemList, TextContainer } from './styles'
-import coffeeImage from '../../assets/png/coffee.png'
+import coffeeImage from '../../../../assets/png/coffee.png'
 import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react'
 
 export function Banner() {

@@ -1,12 +1,7 @@
-import {
-  AddToCart,
-  CardCoffeeContainer,
-  Flag,
-  InputContent,
-  ValueContent
-} from './styles'
-import coffe from '../../assets/png/expresso-tradicional.png'
-import { Minus, Plus, ShoppingCartSimple } from 'phosphor-react'
+import { AddToCart, CardCoffeeContainer, Flag, ValueContent } from './styles'
+import coffe from '../../../../assets/png/expresso-tradicional.png'
+import { ShoppingCartSimple } from 'phosphor-react'
+import { SelectQuantity } from '../../../../components/SelectQuantity'
 
 export function CardCoffee() {
   return (
@@ -21,15 +16,7 @@ export function CardCoffee() {
         <span>
           R$ <strong>9,90</strong>
         </span>
-        <InputContent>
-          <button>
-            <Minus size={14} weight="bold" />
-          </button>
-          <input type="number" value={0} />
-          <button>
-            <Plus size={14} weight="bold" />
-          </button>
-        </InputContent>
+        <SelectQuantity />
 
         <AddToCart>
           <ShoppingCartSimple size={19} weight="fill" color="#fff" />
