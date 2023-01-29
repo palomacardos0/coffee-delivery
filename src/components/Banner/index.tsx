@@ -4,6 +4,7 @@ import iconBox from '../../assets/svg/icon-box.svg'
 import iconTimer from '../../assets/svg/icon-timer.svg'
 import iconCoffee from '../../assets/svg/icon-coffee.svg'
 import coffee from '../../assets/png/coffee.png'
+import { ShoppingCartSimple } from 'phosphor-react'
 
 export function Banner() {
   return (

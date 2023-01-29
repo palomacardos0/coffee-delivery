@@ -53,7 +53,9 @@ export const TextContainer = styled.div`
     font-weight: 400;
     font-size: 1.25rem;
     line-height: 130%;
-    color: #403937;
+    color: ${props => {
+      props.theme['base-subtitle']
+    }};
     font-stretch: 100;
     @media (max-width: 1024px) {
       font-size: 1rem;
