@@ -16,5 +16,8 @@ export const GlobalStyle = createGlobalStyle`
     background: ${props => props.theme.background};
     -webkit-font-smoothing: antialiasesd;
   }
+  button{
+    cursor: pointer;
+  }
   
 `

@@ -1,6 +1,16 @@
 import styled from 'styled-components'
 import background from '../../assets/png/background.png'
 
+interface varianteProps {
+  variant: 'gold' | 'gray' | 'yellow' | 'purple'
+}
+const colorVariant = {
+  gold: '#C47F17',
+  gray: '#574F4D',
+  yellow: '#DBAC2C',
+  purple: '#8047F8'
+}
+
 export const BannerContainer = styled.section`
   padding: 5.6rem 2rem 6.75rem;
   background: url(${background});
@@ -101,15 +111,6 @@ export const TextContainer = styled.div`
     }
   }
 `
-interface varianteProps {
-  variant: 'gold' | 'gray' | 'yellow' | 'purple'
-}
-const colorVariant = {
-  gold: '#C47F17',
-  gray: '#574F4D',
-  yellow: '#DBAC2C',
-  purple: '#8047F8'
-}
 
 export const ItemList = styled.li<varianteProps>`
   list-style: none;

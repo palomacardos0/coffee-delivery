@@ -23,11 +23,11 @@ export function CardCoffee() {
         </span>
         <InputContent>
           <button>
-            <Minus size={14} weight="bold" color="#8047F8" />
+            <Minus size={14} weight="bold" />
           </button>
           <input type="number" value={0} />
           <button>
-            <Plus size={14} weight="bold" color="#8047F8" />
+            <Plus size={14} weight="bold" />
           </button>
         </InputContent>
 

@@ -13,6 +13,9 @@ export const HeaderContainer = styled.header`
     width: 100%;
     max-width: 1120px;
     margin: 0 auto;
+    & > a {
+      margin-right: 10px;
+    }
   }
 
   nav {
@@ -37,7 +40,7 @@ export const HeaderContainer = styled.header`
         overflow: hidden;
         text-overflow: ellipsis;
       }
-      @media (max-width: 300px) {
+      @media (max-width: 350px) {
         max-width: 100px;
       }
     }
