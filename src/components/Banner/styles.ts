@@ -87,11 +87,52 @@ export const TextContainer = styled.div`
     color: ${props => {
       props.theme['base-text']
     }};
+
     @media (max-width: 1024px) {
       font-size: 0.85rem;
     }
-    img {
+
+    svg {
       margin: 0;
+      padding: 8px;
+      border-radius: 100%;
+      height: 32px;
+      width: 32px;
     }
+  }
+`
+interface varianteProps {
+  variant: 'gold' | 'gray' | 'yellow' | 'purple'
+}
+const colorVariant = {
+  gold: '#C47F17',
+  gray: '#574F4D',
+  yellow: '#DBAC2C',
+  purple: '#8047F8'
+}
+
+export const ItemList = styled.li<varianteProps>`
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 130%;
+  max-width: 90vw;
+
+  @media (max-width: 1024px) {
+    font-size: 0.85rem;
+  }
+
+  svg {
+    margin: 0;
+    padding: 8px;
+    border-radius: 100%;
+    height: 32px;
+    width: 32px;
+    background: ${props => colorVariant[props.variant]};
   }
 `

@@ -1,10 +1,6 @@
-import { BannerContainer, TextContainer } from './styles'
-import iconCart from '../../assets/svg/icon-cart.svg'
-import iconBox from '../../assets/svg/icon-box.svg'
-import iconTimer from '../../assets/svg/icon-timer.svg'
-import iconCoffee from '../../assets/svg/icon-coffee.svg'
-import coffee from '../../assets/png/coffee.png'
-import { ShoppingCartSimple } from 'phosphor-react'
+import { BannerContainer, ItemList, TextContainer } from './styles'
+import coffeeImage from '../../assets/png/coffee.png'
+import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react'
 
 export function Banner() {
   return (
@@ -12,29 +8,29 @@ export function Banner() {
       <TextContainer>
         <h1>Encontre o café perfeito para qualquer hora do dia</h1>
         <p>
-          Com o Coffee Delivery você recebe seu café onde estiver, a qualquer
-          hora
+          Com o Coffee DeItemListvery você recebe seu café onde estiver, a
+          qualquer hora
         </p>
         <ul>
-          <li>
-            <img src={iconCart} alt="Icone de carrinho" />
+          <ItemList variant="gold">
+            <ShoppingCart size={18} weight="fill" color="#fff" />
             <span>Compra simples e segura</span>
-          </li>
-          <li>
-            <img src={iconBox} alt="Icone de caixa" />
+          </ItemList>
+          <ItemList variant="gray">
+            <Package size={19} weight="fill" color="#fff" />
             <span>Embalagem mantém o café intacto</span>
-          </li>
-          <li>
-            <img src={iconTimer} alt="Icone de relógio" />
+          </ItemList>
+          <ItemList variant="yellow">
+            <Timer size={19} weight="fill" color="#fff" />
             <span>Entrega rápida e rastreada</span>
-          </li>
-          <li>
-            <img src={iconCoffee} alt="Icone de café" />
+          </ItemList>
+          <ItemList variant="purple">
+            <Coffee size={19} weight="fill" color="#fff" />
             <span>O café chega fresquinho até você</span>
-          </li>
+          </ItemList>
         </ul>
       </TextContainer>
-      <img src={coffee} alt="Imagem de café" />
+      <img src={coffeeImage} alt="Imagem de café" />
     </BannerContainer>
   )
 }
