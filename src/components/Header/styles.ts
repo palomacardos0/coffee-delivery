@@ -4,6 +4,9 @@ export const HeaderContainer = styled.header`
   display: flex;
   background: ${props => props.theme['background']};
   padding: 2rem;
+  @media (max-width: 764px) {
+    padding: 1rem;
+  }
   .content {
     justify-content: space-between;
     display: flex;
@@ -14,15 +17,28 @@ export const HeaderContainer = styled.header`
   nav {
     display: flex;
     gap: 12px;
+    img {
+      max-width: 1.4rem;
+    }
     span {
       display: flex;
       align-items: center;
       justify-content: center;
+      max-width: 143px;
       gap: 0.5rem;
       padding: 0.6rem;
       background: ${props => props.theme['purple-light']};
       border-radius: 8px;
       color: ${props => props.theme['purple-dark']};
+      p {
+        font-size: 0.9rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      @media (max-width: 300px) {
+        max-width: 100px;
+      }
     }
 
     a {
