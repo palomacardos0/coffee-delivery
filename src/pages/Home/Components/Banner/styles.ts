@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import background from '../../assets/png/background.png'
+import background from '../../../../assets/png/background.png'
 
 interface varianteProps {
   variant: 'gold' | 'gray' | 'yellow' | 'purple'
