@@ -1,14 +1,22 @@
+import { Trash } from 'phosphor-react'
 import { SelectQuantity } from '../../../../components/SelectQuantity'
+import coffeImg from '../../../../assets/png/expresso-tradicional.png'
+import { ItemCartContent, QuantityContent, RemoveButton } from './styles'
 
 export function ItemCart() {
   return (
-    <div>
-      <img src="" alt="" />
-      <span>Expresso Tradicional</span>
-      <SelectQuantity />
-      <button>remover</button>
-
-      <span>R$ 9,90</span>
-    </div>
+    <ItemCartContent>
+      <img src={coffeImg} alt="" />
+      <div>
+        <span>Expresso Tradicional</span>
+        <QuantityContent>
+          <SelectQuantity />
+          <RemoveButton>
+            <Trash size={16} /> remover
+          </RemoveButton>
+        </QuantityContent>
+      </div>
+      <strong>R$ 9,90</strong>
+    </ItemCartContent>
   )
 }

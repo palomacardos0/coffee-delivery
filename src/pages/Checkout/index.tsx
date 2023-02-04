@@ -14,7 +14,10 @@ import {
   InputsContainer,
   PaymentContainer,
   TextContainerPayment,
-  TextContainerAddress
+  TextContainerAddress,
+  CartItensContainer,
+  ValuesContainer,
+  ButtonConfirmOrder
 } from './styles'
 
 export function Checkout() {
@@ -69,24 +72,27 @@ export function Checkout() {
 
       <CartContainer>
         <h2>Cafés selecionados</h2>
-        <div>
+        <CartItensContainer>
           <ItemCart />
           <ItemCart />
 
-          <div>
-            <span>Total de itens</span>
-            <span>R$ 29,70</span>
-          </div>
-          <div>
-            <span>Entrega</span>
-            <span>R$ 3,50</span>
-          </div>
-          <div>
-            <span>Total</span>
-            <span>R$ 33,20</span>
-          </div>
-          <button>confirmar pedido</button>
-        </div>
+          <ValuesContainer>
+            <div>
+              <span>Total de itens</span>
+              <span>R$ 29,70</span>
+            </div>
+            <div>
+              <span>Entrega</span>
+              <span>R$ 3,50</span>
+            </div>
+            <div>
+              <strong>Total</strong>
+              <strong>R$ 33,20</strong>
+            </div>
+          </ValuesContainer>
+
+          <ButtonConfirmOrder>confirmar pedido</ButtonConfirmOrder>
+        </CartItensContainer>
       </CartContainer>
     </CheckoutContainer>
   )

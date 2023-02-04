@@ -2,13 +2,17 @@ import styled from 'styled-components'
 
 export const CheckoutContainer = styled.main`
   display: flex;
+  gap: 2rem;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1120px;
+  margin-top: 2.5rem;
 `
 export const InfoOrderContainer = styled.section`
   display: flex;
   flex-direction: column;
   flex: 1;
-  max-width: 640px;
-  gap: 12px;
+  gap: 0.938rem;
   h2 {
     font-family: 'Baloo 2';
     font-style: normal;
@@ -127,18 +131,60 @@ export const PaymentContainer = styled(CardsCheckoutContainer)`
     &:not(:last-child) {
       margin-right: 12px;
     }
-    color: font-family: 'Roboto';
-font-style: normal;
-font-weight: 400;
-font-size: 12px;
-line-height: 160%;
-/* or 19px */
-
-text-transform: uppercase;
-
-/* Base/Text */
-
-color: #574F4D;;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 160%;
+    text-transform: uppercase;
+    color: ${props => props.theme['base-text']};
   }
 `
-export const CartContainer = styled.section``
+export const CartContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  gap: 0.938rem;
+  h2 {
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 130%;
+    color: ${props => props.theme['base-subtitle']};
+  }
+`
+
+export const CartItensContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+
+  max-width: 448px;
+  background: ${props => props.theme['base-card']};
+  border-radius: 6px 44px;
+`
+export const ValuesContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 24px;
+  div {
+    display: flex;
+    justify-content: space-between;
+  }
+`
+export const ButtonConfirmOrder = styled.button`
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  color: ${props => props.theme['white']};
+  background: ${props => props.theme['yellow']};
+  border-radius: 6px;
+  border: 0;
+  outline: 0;
+
+  font-stretch: 100;
+  padding: 0.75rem;
+`
