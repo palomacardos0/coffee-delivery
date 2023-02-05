@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const SelectQuantityContent = styled.div`
-  margin-left: 1.45rem;
+  /* margin-left: 1.45rem; */
   display: flex;
   max-width: 4.5rem;
   background: ${props => props.theme['base-button']};

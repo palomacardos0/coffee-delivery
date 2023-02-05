@@ -58,6 +58,7 @@ export const ValueContent = styled.span`
     font-size: 0.875rem;
     line-height: 130%;
     color: ${props => props.theme['base-text']};
+    margin-right: 1.45rem;
   }
   strong {
     font-family: 'Baloo 2', sans-serif;

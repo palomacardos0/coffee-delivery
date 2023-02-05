@@ -7,6 +7,12 @@ export const ItemCartContent = styled.div`
   margin: 0 0 1.5rem 0;
   border-bottom: 1px solid ${props => props.theme['base-button']};
 
+  & > div {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
   span {
     font-family: 'Roboto';
     font-style: normal;
@@ -28,6 +34,10 @@ export const ItemCartContent = styled.div`
   img {
     max-width: 4rem;
     height: fit-content;
+  }
+  @media (max-width: 764px) {
+    display: grid;
+    grid-template-columns: max-content max-content;
   }
 `
 

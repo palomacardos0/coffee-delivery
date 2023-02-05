@@ -17,7 +17,8 @@ import {
   TextContainerAddress,
   CartItensContainer,
   ValuesContainer,
-  ButtonConfirmOrder
+  ButtonConfirmOrder,
+  PaymentForms
 } from './styles'
 
 export function Checkout() {
@@ -53,7 +54,7 @@ export function Checkout() {
               </p>
             </div>
           </TextContainerPayment>
-          <div>
+          <PaymentForms>
             <button>
               <CreditCard size={16} />
               Cartão de crédito
@@ -66,7 +67,7 @@ export function Checkout() {
               <Money size={16} />
               dinheiro
             </button>
-          </div>
+          </PaymentForms>
         </PaymentContainer>
       </InfoOrderContainer>
 

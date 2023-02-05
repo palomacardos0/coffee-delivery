@@ -5,8 +5,13 @@ export const CheckoutContainer = styled.main`
   gap: 2rem;
   margin: 0 auto;
   width: 100%;
-  max-width: 1120px;
+  max-width: 1184px;
   margin-top: 2.5rem;
+  padding: 0 2rem;
+  @media (max-width: 1164px) {
+    padding: 0 1rem;
+    flex-direction: column;
+  }
 `
 export const InfoOrderContainer = styled.section`
   display: flex;
@@ -30,6 +35,9 @@ export const CardsCheckoutContainer = styled.div`
 
   background: ${props => props.theme['base-card']};
   padding: 2.5rem;
+  @media (max-width: 764px) {
+    padding: 1rem;
+  }
 `
 export const AddressContainer = styled(CardsCheckoutContainer)`
   svg {
@@ -46,33 +54,38 @@ export const AddressContainer = styled(CardsCheckoutContainer)`
 `
 export const InputsContainer = styled.div`
   display: grid;
-  grid-template-columns: 200px 212px 60px;
-  gap: 16px 12px;
-  grid-template-areas:
-    'cep . . ' 'rua rua rua'
-    'numero complemento complemento' 'bairro cidade uf';
+  gap: 1rem;
+  @media (min-width: 764px) {
+    grid-template-columns: 200px 212px 60px;
+    gap: 16px 12px;
+    grid-template-areas:
+      'cep . . ' 'rua rua rua'
+      'numero complemento complemento' 'bairro cidade uf';
 
-  input {
-    &#cep {
-      grid-area: cep;
-    }
-    &#rua {
-      grid-area: rua;
-    }
-    &#numero {
-      grid-area: numero;
-    }
-    &#complemento {
-      grid-area: complemento;
-    }
-    &#bairro {
-      grid-area: bairro;
-    }
-    &#cidade {
-      grid-area: cidade;
-    }
-    &#uf {
-      grid-area: uf;
+    input {
+      &#cep {
+        grid-area: cep;
+      }
+      &#rua {
+        grid-area: rua;
+      }
+      &#numero {
+        grid-area: numero;
+      }
+      &#complemento {
+        grid-area: complemento;
+      }
+      &#bairro {
+        grid-area: bairro;
+      }
+      &#cidade {
+        grid-area: cidade;
+      }
+      &#uf {
+        grid-area: uf;
+      }
+      display: flex;
+      flex-direction: column;
     }
   }
 
@@ -119,6 +132,10 @@ export const PaymentContainer = styled(CardsCheckoutContainer)`
   & > div {
     display: flex;
   }
+`
+export const PaymentForms = styled.section`
+  display: flex;
+  gap: 0.75rem;
   button {
     flex: 1;
     display: flex;
@@ -128,9 +145,6 @@ export const PaymentContainer = styled(CardsCheckoutContainer)`
     border: 0;
     background: ${props => props.theme['base-button']};
     border-radius: 6px;
-    &:not(:last-child) {
-      margin-right: 12px;
-    }
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -138,6 +152,10 @@ export const PaymentContainer = styled(CardsCheckoutContainer)`
     line-height: 160%;
     text-transform: uppercase;
     color: ${props => props.theme['base-text']};
+  }
+
+  @media (max-width: 764px) {
+    flex-direction: column;
   }
 `
 export const CartContainer = styled.section`
@@ -157,11 +175,17 @@ export const CartContainer = styled.section`
 export const CartItensContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 40px;
+  padding: 2.5rem;
 
   max-width: 448px;
   background: ${props => props.theme['base-card']};
   border-radius: 6px 44px;
+  @media (max-width: 1164px) {
+    max-width: inherit;
+  }
+  @media (max-width: 764px) {
+    padding: 2.5rem 1rem;
+  }
 `
 export const ValuesContainer = styled.div`
   display: flex;
