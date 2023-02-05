@@ -8,7 +8,7 @@ export function ItemCart() {
     <ItemCartContent>
       <img src={coffeImg} alt="" />
       <div>
-        <span>Expresso Tradicional</span>
+        <p>Expresso Tradicional</p>
         <QuantityContent>
           <SelectQuantity />
           <RemoveButton>

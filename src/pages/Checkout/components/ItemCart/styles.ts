@@ -13,7 +13,7 @@ export const ItemCartContent = styled.div`
     flex: 1;
   }
 
-  span {
+  p {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -22,6 +22,9 @@ export const ItemCartContent = styled.div`
     display: flex;
     color: ${props => props.theme['base-subtitle']};
     margin-bottom: 0.5rem;
+    @media (max-width: 300px) {
+      max-width: min-content;
+    }
   }
   strong {
     font-family: 'Roboto', sans-serif;
@@ -45,6 +48,9 @@ export const QuantityContent = styled.div`
   display: flex;
   gap: 8px;
   margin-bottom: 1.5rem;
+  @media (max-width: 764px) {
+    flex-direction: column;
+  }
 `
 export const RemoveButton = styled.button`
   background: ${props => props.theme['base-button']};
@@ -63,7 +69,15 @@ export const RemoveButton = styled.button`
   align-items: center;
   justify-content: center;
   gap: 4px;
+  transition: all 0.2s;
   svg {
     color: ${props => props.theme['purple']};
+  }
+
+  &:hover {
+    background: ${props => props.theme['base-hover']};
+    svg {
+      color: ${props => props.theme['purple-dark']};
+    }
   }
 `
