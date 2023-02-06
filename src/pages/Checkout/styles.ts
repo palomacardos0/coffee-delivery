@@ -18,6 +18,12 @@ export const CartContainer = styled.section`
   display: flex;
   flex-direction: column;
   gap: 0.938rem;
+  a {
+    width: 100%;
+    button {
+      width: 100%;
+    }
+  }
   h2 {
     font-family: 'Baloo 2';
     font-style: normal;
@@ -48,6 +54,23 @@ export const ValuesContainer = styled.div`
   flex-direction: column;
   gap: 0.75rem;
   margin-bottom: 24px;
+  strong {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 130%;
+    color: ${props => props.theme['base-subtitle']};
+  }
+  span {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: ${props => props.theme['base-text']};
+  }
+
   div {
     display: flex;
     justify-content: space-between;

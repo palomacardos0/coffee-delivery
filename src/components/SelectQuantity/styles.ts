@@ -27,6 +27,7 @@ export const SelectQuantityContent = styled.div`
     border: 0;
     outline: 0;
     text-align: center;
+    color: ${props => props.theme['base-text']};
     &::-webkit-inner-spin-button {
       display: none;
       -webkit-appearance: none;

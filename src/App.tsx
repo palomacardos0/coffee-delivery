@@ -3,15 +3,30 @@ import { Router } from './Router'
 import { BrowserRouter } from 'react-router-dom'
 import { GlobalStyle } from './styles/global'
 import { defaultTheme } from './styles/themes/default'
+import { createContext, useState } from 'react'
+import { darkTheme } from './styles/themes/dark'
+
+interface DarkModeContextType {
+  darkMode: boolean
+  handleChangeDarkMode: () => void
+}
+
+export const DarkModeContext = createContext({} as DarkModeContextType)
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false)
+  function handleChangeDarkMode() {
+    setDarkMode(!darkMode)
+  }
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <BrowserRouter>
-        <Router />
-      </BrowserRouter>
-      <GlobalStyle />
-    </ThemeProvider>
+    <DarkModeContext.Provider value={{ darkMode, handleChangeDarkMode }}>
+      <ThemeProvider theme={darkMode ? darkTheme : defaultTheme}>
+        <BrowserRouter>
+          <Router />
+        </BrowserRouter>
+        <GlobalStyle />
+      </ThemeProvider>
+    </DarkModeContext.Provider>
   )
 }
 

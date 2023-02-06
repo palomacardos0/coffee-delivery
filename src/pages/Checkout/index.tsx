@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import { InfoOrder } from './components/InfoOrder'
 import { ItemCart } from './components/ItemCart'
 import {
@@ -32,8 +33,9 @@ export function Checkout() {
               <strong>R$ 33,20</strong>
             </div>
           </ValuesContainer>
-
-          <ButtonConfirmOrder>confirmar pedido</ButtonConfirmOrder>
+          <NavLink to="/success">
+            <ButtonConfirmOrder>confirmar pedido</ButtonConfirmOrder>
+          </NavLink>
         </CartItensContainer>
       </CartContainer>
     </CheckoutContainer>

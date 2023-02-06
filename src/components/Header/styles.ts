@@ -54,3 +54,13 @@ export const HeaderContainer = styled.header`
     }
   }
 `
+export const DarkModeButton = styled.button`
+  background: transparent;
+  border-radius: 9999px;
+  display: flex;
+  line-height: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 3px;
+  border: 1px solid ${props => props.theme['base-text']};
+`

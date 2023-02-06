@@ -7,7 +7,7 @@ export function SelectQuantity() {
       <button>
         <Minus size={14} weight="bold" />
       </button>
-      <input type="number" value={0} />
+      <input type="number" />
       <button>
         <Plus size={14} weight="bold" />
       </button>

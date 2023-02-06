@@ -1,9 +1,12 @@
 import { NavLink } from 'react-router-dom'
-import { HeaderContainer } from './styles'
+import { DarkModeButton, HeaderContainer } from './styles'
 import logo from '../../assets/svg/logo.svg'
-import { MapPin, ShoppingCart } from 'phosphor-react'
+import { MapPin, Moon, ShoppingCart, SunDim } from 'phosphor-react'
+import { useContext } from 'react'
+import { DarkModeContext } from '../../App'
 
 export function Header() {
+  const { handleChangeDarkMode } = useContext(DarkModeContext)
   return (
     <HeaderContainer>
       <div>
@@ -11,6 +14,10 @@ export function Header() {
           <img src={logo} alt="" />
         </NavLink>
         <nav>
+          <DarkModeButton onClick={handleChangeDarkMode}>
+            <Moon size={26} color="#171717" />
+            <SunDim size={26} color="#FAFAFA" />
+          </DarkModeButton>
           <span>
             <MapPin size={24} weight="fill" color="#8047F8" />
             <p>Porto Alegre, RS</p>

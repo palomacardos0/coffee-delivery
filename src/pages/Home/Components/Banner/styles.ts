@@ -49,10 +49,8 @@ export const TextContainer = styled.div`
     font-weight: 800;
     font-size: 3rem;
     line-height: 130%;
-    color: ${props => {
-      props.theme['base-title']
-    }};
     margin-bottom: 1rem;
+    color: ${props => props.theme['base-title']};
     @media (max-width: 1024px) {
       font-size: 2rem;
     }
@@ -63,17 +61,13 @@ export const TextContainer = styled.div`
     font-weight: 400;
     font-size: 1.25rem;
     line-height: 130%;
-    color: ${props => {
-      props.theme['base-subtitle']
-    }};
+    color: ${props => props.theme['base-subtitle']};
     font-stretch: 100;
     @media (max-width: 1024px) {
       font-size: 1rem;
     }
   }
-  color: ${props => {
-    props.theme['base-subtitle']
-  }};
+  color: ${props => props.theme['base-subtitle']};
   ul {
     display: grid;
     grid-template-columns: repeat(2, max-content);
@@ -94,9 +88,7 @@ export const TextContainer = styled.div`
     font-size: 1rem;
     line-height: 130%;
     max-width: 90vw;
-    color: ${props => {
-      props.theme['base-text']
-    }};
+    color: ${props => props.theme['base-text']};
 
     @media (max-width: 1024px) {
       font-size: 0.85rem;
