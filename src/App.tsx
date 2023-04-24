@@ -6,6 +6,8 @@ import { defaultTheme } from './styles/themes/default'
 import { createContext, useState } from 'react'
 import { darkTheme } from './styles/themes/dark'
 
+import { CartProvider } from './hooks/useCart'
+
 interface DarkModeContextType {
   darkMode: boolean
   handleChangeDarkMode: () => void
@@ -21,10 +23,12 @@ function App() {
   return (
     <DarkModeContext.Provider value={{ darkMode, handleChangeDarkMode }}>
       <ThemeProvider theme={darkMode ? darkTheme : defaultTheme}>
-        <BrowserRouter>
-          <Router />
-        </BrowserRouter>
-        <GlobalStyle />
+        <CartProvider>
+          <BrowserRouter>
+            <Router />
+          </BrowserRouter>
+          <GlobalStyle />
+        </CartProvider>
       </ThemeProvider>
     </DarkModeContext.Provider>
   )
