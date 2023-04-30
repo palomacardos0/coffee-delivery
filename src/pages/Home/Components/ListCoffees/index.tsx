@@ -9,6 +9,7 @@ interface CoffeeProps {
   image: string
   description: string
   type: [string]
+  id: number
 }
 
 export function ListCoffes() {
@@ -19,8 +20,6 @@ export function ListCoffes() {
       const response = await api.get<CoffeeProps[]>('products')
 
       setProducts(response.data)
-
-      console.log(products)
     }
 
     loadProducts()
@@ -32,11 +31,13 @@ export function ListCoffes() {
         {products.map(product => {
           return (
             <CardCoffee
+              key={product.id}
               description={product.description}
               image={product.image}
               price={product.price}
               title={product.title}
               type={product.type}
+              productId={product.id}
             />
           )
         })}

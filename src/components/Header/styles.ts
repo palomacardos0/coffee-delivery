@@ -51,6 +51,19 @@ export const HeaderContainer = styled.header`
       padding: 0.5rem;
       border-radius: 4px;
       background: ${props => props.theme['yellow-light']};
+      text-decoration: none;
+      position: relative;
+      strong {
+        color: ${props => props.theme['white']};
+        background: ${props => props.theme['yellow-dark']};
+        text-decoration: none;
+        border-radius: 999px;
+        line-height: 12px;
+        position: absolute;
+        padding: 2px 4px;
+        top: -4px;
+        right: 0;
+      }
     }
   }
 `

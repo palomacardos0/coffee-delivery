@@ -8,16 +8,25 @@ import {
   ValuesContainer,
   ButtonConfirmOrder
 } from './styles'
+import { useCart } from '../../hooks/useCart'
 
 export function Checkout() {
+  const { cart } = useCart()
   return (
     <CheckoutContainer>
       <InfoOrder />
       <CartContainer>
         <h2>Cafés selecionados</h2>
         <CartItensContainer>
-          <ItemCart />
-          <ItemCart />
+          {cart.map(item => (
+            <ItemCart
+              productId={item.id}
+              amount={item.amount}
+              image={item.image}
+              price={item.price}
+              title={item.title}
+            />
+          ))}
 
           <ValuesContainer>
             <div>

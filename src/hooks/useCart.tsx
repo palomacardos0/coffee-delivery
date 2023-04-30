@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useState } from 'react'
+import { createContext, ReactNode, useContext, useState } from 'react'
 import { Product } from '../@types/product'
 import { api } from '../services/api'
 import { toast } from 'react-toastify'
@@ -117,4 +117,10 @@ export function CartProvider({ children }: CartProviderProps) {
       {children}
     </CartContext.Provider>
   )
+}
+
+export function useCart(): CartContextData {
+  const context = useContext(CartContext)
+
+  return context
 }

@@ -8,6 +8,7 @@ interface CoffeeProps {
   image: string
   description: string
   type: [string]
+  productId: number
 }
 
 export function CardCoffee({
@@ -15,7 +16,8 @@ export function CardCoffee({
   image,
   price,
   title,
-  type
+  type,
+  productId
 }: CoffeeProps) {
   return (
     <CardCoffeeContainer>
@@ -23,7 +25,6 @@ export function CardCoffee({
       {type.map(tp => {
         return <Flag key={tp}> {tp} </Flag>
       })}
-      {/* <Flag>Tradicional</Flag> */}
       <div>
         <h3>{title}</h3>
         <p>{description}</p>
@@ -32,11 +33,7 @@ export function CardCoffee({
         <span>
           R$ <strong>{price}</strong>
         </span>
-        <SelectQuantity />
-
-        <AddToCart>
-          <ShoppingCartSimple size={19} weight="fill" color="#fff" />
-        </AddToCart>
+        <SelectQuantity productId={productId} />
       </ValueContent>
     </CardCoffeeContainer>
   )

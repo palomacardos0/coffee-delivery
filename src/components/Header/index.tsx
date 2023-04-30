@@ -4,8 +4,10 @@ import logo from '../../assets/svg/logo.svg'
 import { MapPin, Moon, ShoppingCart, SunDim } from 'phosphor-react'
 import { useContext } from 'react'
 import { DarkModeContext } from '../../App'
+import { useCart } from '../../hooks/useCart'
 
 export function Header() {
+  const { cart } = useCart()
   const { handleChangeDarkMode } = useContext(DarkModeContext)
   return (
     <HeaderContainer>
@@ -24,6 +26,7 @@ export function Header() {
           </span>
           <NavLink to={'/checkout'}>
             <ShoppingCart size={25} weight="fill" color="#C47F17" />
+            {cart.length > 0 && <strong>{cart.length}</strong>}
           </NavLink>
         </nav>
       </div>

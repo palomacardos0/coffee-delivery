@@ -1,22 +1,57 @@
-import { Trash } from 'phosphor-react'
-import { SelectQuantity } from '../../../../components/SelectQuantity'
-import coffeImg from '../../../../assets/png/expresso-tradicional.png'
+import { Minus, Plus, Trash } from 'phosphor-react'
 import { ItemCartContent, QuantityContent, RemoveButton } from './styles'
+import { SelectQuantityContent } from '../../../../components/SelectQuantity/styles'
+import { useCart } from '../../../../hooks/useCart'
 
-export function ItemCart() {
+interface SelectQuantityProps {
+  productId: number
+  amount: number
+  image: string
+  price: number
+  title: string
+}
+
+export function ItemCart({
+  amount,
+  productId,
+  image,
+  price,
+  title
+}: SelectQuantityProps) {
+  const { updateProductAmount } = useCart()
   return (
     <ItemCartContent>
-      <img src={coffeImg} alt="" />
+      <img src={image} alt="" />
       <div>
-        <p>Expresso Tradicional</p>
+        <p>{title}</p>
         <QuantityContent>
-          <SelectQuantity />
+          <SelectQuantityContent>
+            <button disabled={amount <= 1}>
+              <Minus
+                size={14}
+                weight="bold"
+                onClick={() => {
+                  updateProductAmount({ productId, amount: amount - 1 })
+                }}
+              />
+            </button>
+            <input type="number" value={amount} />
+            <button>
+              <Plus
+                size={14}
+                weight="bold"
+                onClick={() => {
+                  updateProductAmount({ productId, amount: amount + 1 })
+                }}
+              />
+            </button>
+          </SelectQuantityContent>
           <RemoveButton>
             <Trash size={16} /> remover
           </RemoveButton>
         </QuantityContent>
       </div>
-      <strong>R$ 9,90</strong>
+      <strong>R$ {price}</strong>
     </ItemCartContent>
   )
 }
