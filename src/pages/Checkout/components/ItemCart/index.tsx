@@ -2,6 +2,7 @@ import { Minus, Plus, Trash } from 'phosphor-react'
 import { ItemCartContent, QuantityContent, RemoveButton } from './styles'
 import { SelectQuantityContent } from '../../../../components/SelectQuantity/styles'
 import { useCart } from '../../../../hooks/useCart'
+import { formatPrice } from '../../../../utils/formartPrice'
 
 interface SelectQuantityProps {
   productId: number
@@ -18,7 +19,7 @@ export function ItemCart({
   price,
   title
 }: SelectQuantityProps) {
-  const { updateProductAmount } = useCart()
+  const { updateProductAmount, removeProduct } = useCart()
   return (
     <ItemCartContent>
       <img src={image} alt="" />
@@ -46,12 +47,16 @@ export function ItemCart({
               />
             </button>
           </SelectQuantityContent>
-          <RemoveButton>
+          <RemoveButton
+            onClick={() => {
+              removeProduct(productId)
+            }}
+          >
             <Trash size={16} /> remover
           </RemoveButton>
         </QuantityContent>
       </div>
-      <strong>R$ {price}</strong>
+      <strong>R$ {formatPrice(price)}</strong>
     </ItemCartContent>
   )
 }

@@ -7,6 +7,7 @@ import { createContext, useState } from 'react'
 import { darkTheme } from './styles/themes/dark'
 
 import { CartProvider } from './hooks/useCart'
+import { ToastContainer } from 'react-toastify'
 
 interface DarkModeContextType {
   darkMode: boolean
@@ -28,6 +29,7 @@ function App() {
             <Router />
           </BrowserRouter>
           <GlobalStyle />
+          <ToastContainer autoClose={3000} />
         </CartProvider>
       </ThemeProvider>
     </DarkModeContext.Provider>

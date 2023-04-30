@@ -1,6 +1,7 @@
 import { AddToCart, CardCoffeeContainer, Flag, ValueContent } from './styles'
 import { ShoppingCartSimple } from 'phosphor-react'
 import { SelectQuantity } from '../../../../components/SelectQuantity'
+import { formatPrice } from '../../../../utils/formartPrice'
 
 interface CoffeeProps {
   title: string
@@ -31,7 +32,7 @@ export function CardCoffee({
       </div>
       <ValueContent>
         <span>
-          R$ <strong>{price}</strong>
+          R$ <strong>{formatPrice(price)}</strong>
         </span>
         <SelectQuantity productId={productId} />
       </ValueContent>

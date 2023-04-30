@@ -96,3 +96,27 @@ export const ButtonConfirmOrder = styled.button`
     background: ${props => props.theme['yellow-dark']};
   }
 `
+export const EmptyCart = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
+  svg {
+    fill: ${props => props.theme['base-text']};
+  }
+  h1 {
+    text-align: center;
+    color: ${props => props.theme['base-text']};
+  }
+  a {
+    display: flex;
+    background-color: ${props => props.theme['yellow-dark']};
+    padding: 16px;
+    border-radius: 4px;
+    color: ${props => props.theme['white']};
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 20px;
+  }
+`

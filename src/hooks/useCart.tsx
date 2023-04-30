@@ -21,7 +21,15 @@ interface CartContextData {
 const CartContext = createContext<CartContextData>({} as CartContextData)
 
 export function CartProvider({ children }: CartProviderProps) {
-  const [cart, setCart] = useState<Product[]>([])
+  const [cart, setCart] = useState<Product[]>(() => {
+    const storagedCart = localStorage.getItem('CoffeeDeliveryCart')
+
+    if (storagedCart) {
+      return JSON.parse(storagedCart)
+    }
+
+    return []
+  })
 
   async function addProduct({ amount, productId }: UpdateProductAmount) {
     try {
@@ -53,6 +61,7 @@ export function CartProvider({ children }: CartProviderProps) {
       }
 
       setCart(updatedCart)
+      localStorage.setItem('CoffeeDeliveryCart', JSON.stringify(updatedCart))
     } catch {
       toast.error('Erro ao adicionar produto')
     }
@@ -67,6 +76,7 @@ export function CartProvider({ children }: CartProviderProps) {
       if (productIndex >= 0) {
         updatedCart.splice(productIndex, 1)
         setCart(updatedCart)
+        localStorage.setItem('CoffeeDeliveryCart', JSON.stringify(updatedCart))
       } else {
         throw Error()
       }
@@ -102,6 +112,7 @@ export function CartProvider({ children }: CartProviderProps) {
       if (productExists) {
         productExists.amount = amount
         setCart(updatedCart)
+        localStorage.setItem('CoffeeDeliveryCart', JSON.stringify(updatedCart))
       } else {
         throw Error()
       }
