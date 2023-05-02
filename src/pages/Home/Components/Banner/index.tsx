@@ -8,8 +8,8 @@ export function Banner() {
       <TextContainer>
         <h1>Encontre o café perfeito para qualquer hora do dia</h1>
         <p>
-          Com o Coffee DeItemListvery você recebe seu café onde estiver, a
-          qualquer hora
+          Com o Coffee Delivery você recebe seu café onde estiver, a qualquer
+          hora
         </p>
         <ul>
           <ItemList variant="gold">

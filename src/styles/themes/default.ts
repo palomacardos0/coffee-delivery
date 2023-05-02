@@ -14,5 +14,8 @@ export const defaultTheme = {
   'base-input': '#EDEDED',
   'base-card': '#F3F2F2',
   background: '#FAFAFA',
-  white: '#FFFFFF'
+  white: '#FFFFFF',
+  'sun-opacity': 0,
+  'moon-opacicy': 1,
+  'icon-position': 0
 }

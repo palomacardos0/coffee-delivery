@@ -56,7 +56,7 @@ export function ItemCart({
           </RemoveButton>
         </QuantityContent>
       </div>
-      <strong>R$ {formatPrice(price)}</strong>
+      <strong> {formatPrice(price)}</strong>
     </ItemCartContent>
   )
 }

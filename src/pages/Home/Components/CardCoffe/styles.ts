@@ -35,6 +35,11 @@ export const CardCoffeeContainer = styled.div`
     margin-bottom: 33px;
   }
 `
+
+export const FlagContainer = styled.div`
+  display: flex;
+  gap: 4px;
+`
 export const Flag = styled.span`
   padding: 0.25rem 0.5rem;
   background: ${props => props.theme['yellow-light']};

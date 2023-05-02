@@ -14,5 +14,8 @@ export const darkTheme = {
   'base-input': '#1d1d1d',
   'base-card': '#333333',
   background: '#171717',
-  white: '#ffffff'
+  white: '#ffffff',
+  'sun-opacity': 1,
+  'moon-opacicy': 0,
+  'icon-position': '30px'
 }

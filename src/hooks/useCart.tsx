@@ -16,6 +16,22 @@ interface CartContextData {
   addProduct: ({ productId, amount }: UpdateProductAmount) => Promise<void>
   removeProduct: (productId: number) => void
   updateProductAmount: ({ productId, amount }: UpdateProductAmount) => void
+  cep: string
+  setCep: React.Dispatch<React.SetStateAction<string>>
+  street: string
+  setStreet: React.Dispatch<React.SetStateAction<string>>
+  number: string
+  setNumber: React.Dispatch<React.SetStateAction<string>>
+  complement: string
+  setComplement: React.Dispatch<React.SetStateAction<string>>
+  district: string
+  setDistrict: React.Dispatch<React.SetStateAction<string>>
+  city: string
+  setCity: React.Dispatch<React.SetStateAction<string>>
+  state: string
+  setState: React.Dispatch<React.SetStateAction<string>>
+  payment: string
+  setPayment: React.Dispatch<React.SetStateAction<string>>
 }
 
 const CartContext = createContext<CartContextData>({} as CartContextData)
@@ -30,6 +46,15 @@ export function CartProvider({ children }: CartProviderProps) {
 
     return []
   })
+
+  const [cep, setCep] = useState('')
+  const [street, setStreet] = useState('')
+  const [number, setNumber] = useState('')
+  const [complement, setComplement] = useState('')
+  const [district, setDistrict] = useState('')
+  const [city, setCity] = useState('')
+  const [state, setState] = useState('')
+  const [payment, setPayment] = useState('')
 
   async function addProduct({ amount, productId }: UpdateProductAmount) {
     try {
@@ -123,7 +148,28 @@ export function CartProvider({ children }: CartProviderProps) {
 
   return (
     <CartContext.Provider
-      value={{ cart, addProduct, removeProduct, updateProductAmount }}
+      value={{
+        cart,
+        addProduct,
+        removeProduct,
+        updateProductAmount,
+        cep,
+        city,
+        complement,
+        district,
+        number,
+        setCep,
+        setCity,
+        setComplement,
+        setDistrict,
+        setNumber,
+        setState,
+        setStreet,
+        state,
+        street,
+        payment,
+        setPayment
+      }}
     >
       {children}
     </CartContext.Provider>

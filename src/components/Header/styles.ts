@@ -76,4 +76,18 @@ export const DarkModeButton = styled.button`
   justify-content: center;
   padding: 3px;
   border: 1px solid ${props => props.theme['base-text']};
+  height: 30px;
+  width: 60px;
+  position: relative;
+
+  svg {
+    position: absolute;
+    left: ${props => props.theme['icon-position']};
+  }
+  svg:nth-child(2) {
+    opacity: ${props => props.theme['sun-opacity']};
+  }
+  svg:nth-child(1) {
+    opacity: ${props => props.theme['moon-opacicy']};
+  }
 `

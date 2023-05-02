@@ -1,8 +1,10 @@
 import { CurrencyDollar, MapPin, Timer } from 'phosphor-react'
 import successImage from './assets/success-img.svg'
 import { GradientBorder, ItemLista, SuccessContainer } from './styles'
+import { useCart } from '../../hooks/useCart'
 
 export function Success() {
+  const { street, district, number, city, state, payment } = useCart()
   return (
     <SuccessContainer>
       <div>
@@ -14,9 +16,11 @@ export function Success() {
               <MapPin size={16} weight="fill" />
               <span>
                 Entrega em{' '}
-                <strong>Rua João Daniel MartinelItemLista, 102</strong>
+                <strong>
+                  {street}, {number}
+                </strong>
                 <br />
-                Farrapos - Porto Alegre, RS
+                {district} - {city}, {state}
               </span>
             </ItemLista>
             <ItemLista variant="yellow">
@@ -31,7 +35,7 @@ export function Success() {
 
               <span>
                 Pagamento na entrega <br />
-                <strong>Cartão de Crédito</strong>
+                <strong>{payment}</strong>
               </span>
             </ItemLista>
           </ul>
